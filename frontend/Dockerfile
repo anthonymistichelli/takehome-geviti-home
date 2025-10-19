@@ -7,7 +7,9 @@ WORKDIR /app
 COPY frontend/package*.json ./
 
 # Install dependencies
-RUN npm ci || npm install
+# First try npm ci, if it fails (no lock file or corrupted), fall back to npm install
+# Then clean and reinstall to ensure proper symlinks are created
+RUN npm install 2>&1 && npm rebuild
 
 # Copy frontend code
 COPY frontend/ .

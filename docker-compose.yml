@@ -2,9 +2,7 @@ version: '3.9'
 
 services:
   backend:
-    build:
-      context: .
-      dockerfile: backend/Dockerfile
+    image: geviti-takehome-backend:latest
     container_name: geviti-backend
     ports:
       - "8000:8000"
@@ -20,9 +18,7 @@ services:
       - geviti-network
 
   frontend:
-    build:
-      context: .
-      dockerfile: frontend/Dockerfile
+    image: geviti-takehome-frontend:latest
     container_name: geviti-frontend
     ports:
       - "5173:5173"
