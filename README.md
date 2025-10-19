@@ -22,7 +22,7 @@ A full-stack web application for predicting home prices based on square footage 
 
 ```bash
 ./build.sh
-docker compose up -d
+./run.sh
 ```
 
 **Access the application:**
