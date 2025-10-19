@@ -1,0 +1,38 @@
+version: '3.9'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: geviti-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=False
+      - ALLOWED_HOSTS=localhost,127.0.0.1,backend
+      - ADMIN_USERNAME=admin
+      - ADMIN_PASSWORD=admin123
+    volumes:
+      - ./backend:/app
+    command: sh -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    networks:
+      - geviti-network
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    container_name: geviti-frontend
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_URL=http://localhost:8000/api/predictions
+    depends_on:
+      - backend
+    networks:
+      - geviti-network
+
+networks:
+  geviti-network:
+    driver: bridge

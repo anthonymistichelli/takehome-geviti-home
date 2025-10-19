@@ -1,0 +1,41 @@
+/* Color Palette Configuration - WCAG 2.1 Level AA Compliant */
+
+:root {
+    /* Primary Colors - High contrast for accessibility */
+    --black: #000000;
+    --white: #ffffff;
+
+    /* Semantic Colors - Strong contrast with black text */
+    --primary-blue: #0052a3;
+    /* Primary action button - 7.8:1 contrast */
+    --primary-blue-dark: #003d7a;
+    /* Hover state - darker for depth */
+    --primary-blue-light: #0066cc;
+    /* Secondary actions */
+
+    /* Secondary Colors - For accents and backgrounds */
+    --accent-teal: #006b6b;
+    /* Accent color - 7.5:1 contrast */
+    --accent-teal-light: #00a0a0;
+    /* Light variant for buttons */
+    --accent-teal-pale: #d0eeee;
+    /* Very light for table row hover - distinct from button */
+    --accent-green: #2d6b3f;
+    /* Secondary accent - 6.2:1 contrast */
+
+    /* Neutral Colors - For backgrounds and borders */
+    --light-gray: #f0f0f0;
+    /* Light background - 18.5:1 contrast */
+    --medium-gray: #e0e0e0;
+    /* Border and divider color */
+    --dark-gray: #4a4a4a;
+    /* Secondary text - 8.6:1 contrast */
+
+    /* Status Colors */
+    --error-red: #b91c1c;
+    /* Error state - 6.0:1 contrast */
+    --error-red-dark: #7f1d1d;
+    /* Error hover - darker */
+    --success-green: #15803d;
+    /* Success state - 8.5:1 contrast */
+}
